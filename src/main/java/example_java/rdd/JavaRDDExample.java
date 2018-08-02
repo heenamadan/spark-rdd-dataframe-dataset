@@ -18,7 +18,7 @@ public class JavaRDDExample {
 
         JavaRDD<JavaPerson> rdd = sc.parallelize(JavaData.sampleData());
 
-        rdd.filter(p -> p.getAge() < 21)
+        rdd.filter(p -> p.getAge() < 18)
                 .collect()
                 .forEach(System.out::println);
 
