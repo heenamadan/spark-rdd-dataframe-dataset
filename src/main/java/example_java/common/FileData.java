@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class JavaData {
+public class FileData {
 
     public static List<Person> sampleData() throws IOException {
         return sampleDataAsStrings().stream().map(line -> {

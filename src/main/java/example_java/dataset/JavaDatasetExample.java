@@ -1,6 +1,6 @@
 package example_java.dataset;
 
-import example_java.common.JavaData;
+import example_java.common.FileData;
 import example_java.common.Person;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -24,7 +24,7 @@ public class JavaDatasetExample {
 
         SQLContext sqlContext = new SQLContext(sc);
 
-        List<Person> data = JavaData.sampleData();
+        List<Person> data = FileData.sampleData();
 
         Dataset<Person> dataset = sqlContext.createDataset(data, Encoders.bean(Person.class));
 
