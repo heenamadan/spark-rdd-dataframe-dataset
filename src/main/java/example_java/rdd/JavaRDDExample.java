@@ -1,7 +1,7 @@
 package example_java.rdd;
 
 import example_java.common.JavaData;
-import example_java.common.JavaPerson;
+import example_java.common.Person;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -16,7 +16,7 @@ public class JavaRDDExample {
 
         JavaSparkContext sc = new JavaSparkContext(sparkConf);
 
-        JavaRDD<JavaPerson> rdd = sc.parallelize(JavaData.sampleData());
+        JavaRDD<Person> rdd = sc.parallelize(JavaData.sampleData());
 
         rdd.filter(p -> p.getAge() < 18)
                 .collect()

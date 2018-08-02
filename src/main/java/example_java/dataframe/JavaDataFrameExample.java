@@ -1,7 +1,7 @@
 package example_java.dataframe;
 
 import example_java.common.JavaData;
-import example_java.common.JavaPerson;
+import example_java.common.Person;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.DataFrame;
@@ -21,8 +21,8 @@ public class JavaDataFrameExample {
 
         SQLContext sqlContext = new SQLContext(sc);
 
-        List<JavaPerson> sampleData = JavaData.sampleData();
-        DataFrame df = sqlContext.createDataFrame(sampleData, JavaPerson.class);
+        List<Person> sampleData = JavaData.sampleData();
+        DataFrame df = sqlContext.createDataFrame(sampleData, Person.class);
 
         // example transformations
 

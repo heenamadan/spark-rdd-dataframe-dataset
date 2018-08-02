@@ -12,10 +12,10 @@ import java.util.stream.Collectors;
 
 public class JavaData {
 
-    public static List<JavaPerson> sampleData() throws IOException {
+    public static List<Person> sampleData() throws IOException {
         return sampleDataAsStrings().stream().map(line -> {
             String[] parts = line.split(",");
-            return new JavaPerson(parts[0], parts[1], getAge(parts[2]), parts[3]);
+            return new Person(parts[0], parts[1], getAge(parts[2]), parts[3]);
         }).collect(Collectors.toList());
     }
 

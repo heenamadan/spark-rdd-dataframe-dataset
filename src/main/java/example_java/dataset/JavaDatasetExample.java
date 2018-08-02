@@ -1,7 +1,7 @@
 package example_java.dataset;
 
 import example_java.common.JavaData;
-import example_java.common.JavaPerson;
+import example_java.common.Person;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.FilterFunction;
@@ -24,13 +24,13 @@ public class JavaDatasetExample {
 
         SQLContext sqlContext = new SQLContext(sc);
 
-        List<JavaPerson> data = JavaData.sampleData();
+        List<Person> data = JavaData.sampleData();
 
-        Dataset<JavaPerson> dataset = sqlContext.createDataset(data, Encoders.bean(JavaPerson.class));
+        Dataset<Person> dataset = sqlContext.createDataset(data, Encoders.bean(Person.class));
 
-        Dataset<JavaPerson> below21 = dataset.filter((FilterFunction<JavaPerson>) person -> (person.getAge() < 21));
+        Dataset<Person> below21 = dataset.filter((FilterFunction<Person>) person -> (person.getAge() < 21));
 
-        below21.foreach((ForeachFunction<JavaPerson>) person -> System.out.println(person));
+        below21.foreach((ForeachFunction<Person>) person -> System.out.println(person));
 
     }
 }

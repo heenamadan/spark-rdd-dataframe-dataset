@@ -2,17 +2,17 @@ package example_java.common;
 
 import java.io.Serializable;
 
-public class JavaPerson implements Serializable {
+public class Person implements Serializable {
 
     String first;
     String last;
     int age;
     String state;
 
-    public JavaPerson() {
+    public Person() {
     }
 
-    public JavaPerson(String first, String last, int age, String state) {
+    public Person(String first, String last, int age, String state) {
         this.first = first;
         this.last = last;
         this.age = age;
@@ -53,7 +53,7 @@ public class JavaPerson implements Serializable {
 
     @Override
     public String toString() {
-        return "JavaPerson{" +
+        return "Person{" +
                 "first='" + first + '\'' +
                 ", last='" + last + '\'' +
                 ", age=" + age +
